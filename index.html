@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:ng="http://angularjs.org" ng-app="reversi">
+<head>
+    <title>Reversi</title>
+
+    <link rel="stylesheet" type="text/css" href="components/bootstrap/bootstrap/css/bootstrap.css">
+
+    <script type="text/javascript" src="components/angular/angular.js"></script>
+    <script type="text/javascript" src="components/d3/d3.min.js"></script>
+
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <style type="text/css">
+    
+        #gameContainer {
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    
+<div id="gameContainer" ng-controller="MainCtrl">
+
+    <reversi-game width="400" height="400" cols="8" rows="8" token="game.token">
+
+    </reversi-game>
+
+</div>
+
+</body>
+</html>
