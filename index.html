@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="components/bootstrap/bootstrap/css/bootstrap.css">
 
     <script type="text/javascript" src="components/angular/angular.js"></script>
-    <script type="text/javascript" src="components/d3/d3.min.js"></script>
+    <script type="text/javascript" src="components/d3/d3.js" charset="UTF-8"></script>
 
     <script type="text/javascript" src="js/main.js"></script>
 
@@ -17,16 +17,29 @@
             margin-left: 10px;
         }
 
+        #gameInfo {
+            margin-left: 520px;
+            position: absolute; 
+        }
+
     </style>
 </head>
 <body>
     
 <div id="gameContainer" ng-controller="MainCtrl">
-
-    <reversi-game width="400" height="400" cols="8" rows="8" token="game.token">
-
-    </reversi-game>
-
+    <h1>Reversi - Angular/D3.js DEMO</h1>
+    <div id="gameInfo">
+        <h3>{{game.player.name}}, it's your turn!</h3>
+        <p>
+            <div ng-repeat="p in game.players">
+                <span style="color:{{p.color}}; font-weight:bold;">{{p.name}}</span>: 
+                <strong>{{p.points}}</strong> points and 
+                <strong>{{p.wins}}</strong> wins
+                <br />
+            </div>
+        </p>
+    </div>
+    <reversi-field width="500" height="500" cols="8" rows="8"></reversi-field>
 </div>
 
 </body>
